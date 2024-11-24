@@ -69,5 +69,3 @@ function validateName() {
         cardName.setCustomValidity("");
     }
 }
-
-document.addEventListener("DOMContentLoaded", calculateTotal);
