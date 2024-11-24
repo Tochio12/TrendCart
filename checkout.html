@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout-TrendCart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="checkout.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">
+            <h2>TrendCart</h2>
+        </a>
+        <a href="cart.html">
+            <div class="cart">
+                <i class="bi bi-bag"></i>
+                <div id="cartAmount" class="cartAmount">0</div>
+            </div>
+        </a>
+    </div>
+
+    <main class="payment-container">
+        <section class="payment-form">
+            <h2>Payment Information</h2>
+            <form id="payment" method="post" action="paysubmit.html">
+                <fieldset>
+                    <label for="cardName">Full Name</label>
+                    <input type="text" id="cardName" name="cardName" required placeholder="John Doe">
+
+                    <label for="creditCard">Credit Card</label>
+                    <div class="card-options">
+                        <label>
+                            <input type="radio" name="credit" value="amex" required> American Express
+                        </label>
+                        <label>
+                            <input type="radio" name="credit" value="visa"> Visa
+                        </label>
+                        <label>
+                            <input type="radio" name="credit" value="master"> MasterCard
+                        </label>
+                        <label>
+                            <input type="radio" name="credit" value="discover"> Discover
+                        </label>
+                    </div>
+
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required pattern="^\d{16}$" placeholder="1234 5678 9876 5432">
+
+                    <label for="expMonth">Expiration Date</label>
+                    <div class="expiration">
+                        <select id="expMonth" name="expMonth" required>
+                            <option value="" disabled selected>MM</option>
+                        </select>
+                        <span>/</span>
+                        <select id="expYear" name="expYear" required>
+                            <option value="" disabled selected>YY</option>
+                        </select>
+                    </div>
+
+                    <label for="cvc">CVC</label>
+                    <input type="text" id="cvc" name="cvc" required pattern="^\d{3,4}$" placeholder="123">
+                </fieldset>
+
+                <button type="submit" id="subButton">Submit Payment</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

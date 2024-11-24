@@ -105,7 +105,9 @@ let totalAmount = ()=>{
         }).reduce((x,y)=>x + y, 0)
         label.innerHTML = `
         <h2>Total Bill : $${amount}</h2>
-        <button class="checkout">Checkout</button>
+        <a href="checkout.html">
+            <button class="checkout">Checkout</button>
+        </a>
         <button onclick="clearCart();" class="remove">Clear Cart</button>
         `
     }else return
